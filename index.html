@@ -18,12 +18,22 @@
         <div class="book-container">
 
         </div>
-        <button command="show-modal" popovertarget="form">Open dialog</button>
-        <div id="form" popover>
-            <p>hello?</p>
+        <button class="new-btn"><img src="assets/favicons/library_add_150dp_495057_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        <div id="overlay" class="overlay hide"></div>
+        <div id="form" class="popover hide">
+            <form>
+                <h2>New Bamboo</h2>
+                <input type="text" id="title" placeholder="Name" class="text">
+                <input type="text" id="origin" placeholder="Origin" class="text">
+                <input type="number" min="2" max="10000" id="pages" placeholder="Number of Stalks" class=text>
+                <label for="read">Have you tasted the bamboo yet?</label>
+                <input type="checkbox" id="read">
+                <button type="button" id="submit">Add</button>
+            </form>
         </div>
 
     </div>
 </body>
+<script defer src="assets/js/buttons.js"></script>
 <script defer src="assets/js/script.js"></script>
 </html>
