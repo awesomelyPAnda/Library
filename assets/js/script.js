@@ -32,7 +32,7 @@ function addBookToLibrary(title, author, pages) {
      myLibrary.push(newBook);
 }
 
-addBookToLibrary(prompt("title"), prompt("author"), prompt("pages"));
+
 addBookToLibrary("Dune", "Frank Herbert", 412);
 
 console.log("All IDs:", myLibrary);
