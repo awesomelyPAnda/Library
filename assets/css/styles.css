@@ -20,10 +20,11 @@ body{
     font-family: "Caveat", cursive;
     display: flex;
     flex-direction: column;
+
 }
 
 .title{
-    font-size: 72px;
+    font-size: clamp(1.5rem, 2.7vw, 4.7rem);
     color: #212529;
     padding-left: 45px;
     padding-top: 10px;
@@ -162,14 +163,14 @@ img{
 
 .card-title{
     color: var(--cardtext);
-    font-size: 2.5rem;
+    font-size: clamp(1.25rem, 1.6vw, 2.5rem);
     font-style: italic bold;
     padding: 10px;
 }
 
 .card-origin, .card-pages{
     color: var(--cardtext);
-    font-size: 1.5rem;
+    font-size: clamp(0.75rem, 0.95vw, 1.5rem);
     font-weight: 700;
 }
 
