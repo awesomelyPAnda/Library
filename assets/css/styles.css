@@ -46,13 +46,13 @@ body{
 
 
 img.panda{
-    width: clamp(60px, 4.5vw, 110px);
-    aspect-ratio: 1/1;
+    height: clamp(60px, 12vh, 110px);
+    width: auto;
 }
 
 .add-btn{
     width: clamp(60px, 4.5vw, 140px);
-    aspect-ratio: 1/1;
+    height: auto;
 }
 .bottom{
     height: 90vh;
@@ -157,7 +157,7 @@ img.panda{
 
 .card{
     align-self: start;
-    width: 13vw;
+    min-width: 13vw;
     aspect-ratio: 1.3 / 1;
     display: flex;
     flex-direction: column;
@@ -236,7 +236,7 @@ img.panda{
   }
 
   img {
-    width: 8vw;
+    min-width: 8vw;
   }
 
   .card {
@@ -273,5 +273,19 @@ img.panda{
 
   .card {
     width: 85vw;
+  }
+}
+
+@media (max-width: 1440px) {
+  .card {
+    width: 16vw;
+  }
+
+  .new-btn {
+    width: 10vw;
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 3.5vw, 4.7rem);
   }
 }
