@@ -182,7 +182,7 @@ img{
     all: unset;
     width: 80%;
     height: 20%;
-    border: 2px solid black;
+    border: 0.1vw solid black;
     justify-content: center;
     display: flex;
     align-items: center;
