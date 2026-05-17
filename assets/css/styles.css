@@ -12,6 +12,8 @@
     --primarytext: #495057;
     --boxbg: #adb5bd;
     --buttonbg: #d3d4d5;
+    --cardbg: #dddedf;
+    --cardtext: #34393e;
 }
 
 body{
@@ -146,13 +148,34 @@ img{
 }
 
 .card{
-    width: 250px;
+    width: 350px;
     height: 300px;
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
+    box-shadow: 1px 1px 10px black;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     gap: 10px;
+    background-color: var(--cardbg);
+}
+
+.card-title{
+    color: var(--cardtext);
+    font-size: 2.5rem;
+    font-style: italic bold;
+    padding: 10px;
+}
+
+.card-origin, .card-pages{
+    color: var(--cardtext);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.btn{
+    all: unset;
+    width:275px;
+    height: 50px;
+    border: 
 }

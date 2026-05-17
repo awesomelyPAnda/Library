@@ -32,20 +32,38 @@ class Book {
     }
 }
 function renderBook(book) {
+    
     console.log(book)
+    /* creating the elements */
     const card = document.createElement("div")
     const title = document.createElement("p")
     const origin = document.createElement("p")
     const pages = document.createElement("p")
+    const tasted = document.createElement("button")
+    
+    /*checking value of checkmark */
+    if(book.read === true){
+        tasted.classList.add("checked", "btn", "tasted")
+        tasted.textContent = "tasted"
+    }
+    else{
+        tasted.classList.add("not-checked", "btn", "tasted")
+        tasted.textContent = "not tasted"
+    }
+    
+    /* adding classes for css styling */
     title.classList.add("card-title")
     origin.classList.add("card-origin")
     pages.classList.add("card-pages")
+    /* Changing text content */
     title.textContent = book.title
     origin.textContent = `origin country: ${book.origin}`
     pages.textContent = `${book.pages} stalks`
+    /* appending elements */
     card.appendChild(title)
     card.appendChild(origin)
     card.appendChild(pages)
+    card.appendChild(tasted)
     card.classList.add("card")
     container.appendChild(card)
     
