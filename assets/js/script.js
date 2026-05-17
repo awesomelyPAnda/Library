@@ -1,11 +1,11 @@
-
+/* intalizing book render enviroment and library array */
 const container = document.querySelector(".book-container")
 const myLibrary = [];
-
+/* id generation functiom */
 function generateUUID(){
     return crypto.randomUUID()
 }
-
+/* button text animation function */
 function animateText(element, newText) {
   element.style.transition = "opacity 0.2s ease";
   element.style.opacity = 0;
@@ -15,7 +15,7 @@ function animateText(element, newText) {
   }, 200); // wait for fade out, then change text and fade back in
 }
 
-
+/* book storage variable */
 class Book {
     constructor(title, origin, pages, read) {
         this.uuid = generateUUID()
@@ -40,6 +40,8 @@ class Book {
         }
     }
 }
+
+/* renders book on the ui after added to class */
 function renderBook(book) {
     
     console.log(book)
@@ -93,6 +95,8 @@ function renderBook(book) {
     })
     
 }
+
+/* resets the adding form after every open */
 function resetForm() {
   document.getElementById("title").value = "";
   document.getElementById("origin").value = "";
@@ -100,19 +104,21 @@ function resetForm() {
   document.getElementById("read").checked = false;
 }
 
-
+/* adds book to library */
 function addBookToLibrary(title, origin, pages, read) {
+    /* checks if book exists in library */
   const exists = myLibrary.some(book => book.title === title &&  book.origin === origin);
   if (exists) {
     alert("Error: Book already in library");
     return;
   }
+  /* adds book */
   const newBook = new Book(title, origin, pages, read);
   myLibrary.push(newBook);
   renderBook(newBook)
 }
 
-
+/* styling for add button */
 
 const button = document.querySelector(".new-btn")
 
@@ -167,7 +173,7 @@ document.addEventListener('click', (e) => {
 
 
 
-
+/* submit button event listners */
 
 
 const submit = document.getElementById("submit")
