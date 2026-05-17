@@ -180,3 +180,74 @@ img{
     height: 50px;
     border: 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .title {
+    padding-left: 15px;
+    padding-top: 5px;
+  }
+
+  .new-btn {
+    width: 15vw;
+    height: 12vh;
+  }
+
+  img {
+    width: 8vw;
+  }
+
+  .card {
+    width: 40vw;
+    height: auto;
+    padding: 10px;
+  }
+
+  .book-container {
+    flex-wrap: wrap;
+  }
+
+  .popover {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+  }
+
+  .popover.show {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .popover.hide {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+
+@media (max-width: 480px) {
+  .new-btn {
+    width: 20vw;
+    height: 10vh;
+  }
+
+  .card {
+    width: 85vw;
+  }
+}
