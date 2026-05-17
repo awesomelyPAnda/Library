@@ -104,6 +104,10 @@ submit.addEventListener('click', (e) => {
         number: document.getElementById("pages").value,
         checkbox: document.getElementById("read").checked
     }
+    if (!stuff.title || !stuff.origin || !stuff.number) {
+  alert("Please fill in all fields");
+  return;
+}
     addBookToLibrary(stuff.title, stuff.origin, stuff.number, stuff.checkbox)
     popover.classList.remove('show');
     popover.classList.add('hide');
