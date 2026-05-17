@@ -47,7 +47,7 @@ body{
 
 img{
     width: 4.5vw;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1.2/1;
 }
 .bottom{
     height: 90vh;
@@ -182,6 +182,22 @@ img{
     all: unset;
     width: 80%;
     height: 20%;
+    border: 2px solid black;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size:clamp(0.75rem, 1.6vw, 1.5rem);
+    border-radius: 10px;
+}
+
+.btn.checked{
+    transition: all 0.2s ease-in-out;
+    background-color: #6FA804;
+}
+
+.btn.not-checked{
+    transition: all 0.2s ease-in-out;
+    background-color: #E90000;
 }
 
 

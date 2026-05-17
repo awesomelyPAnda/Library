@@ -6,6 +6,15 @@ function generateUUID(){
     return crypto.randomUUID()
 }
 
+function animateText(element, newText) {
+  element.style.transition = "opacity 0.2s ease";
+  element.style.opacity = 0;
+  setTimeout(() => {
+    element.textContent = newText;
+    element.style.opacity = 1;
+  }, 200); // wait for fade out, then change text and fade back in
+}
+
 
 class Book {
     constructor(title, origin, pages, read) {
@@ -40,18 +49,20 @@ function renderBook(book) {
     const origin = document.createElement("p")
     const pages = document.createElement("p")
     const tasted = document.createElement("button")
-    
+    const tastedtext = document.createElement("span")
+
     /*checking value of checkmark */
     if(book.read === true){
         tasted.classList.add("checked", "btn", "tasted")
-        tasted.textContent = "tasted"
+        tastedtext.textContent = "tasted"
     }
     else{
         tasted.classList.add("not-checked", "btn", "tasted")
-        tasted.textContent = "not tasted"
+        tastedtext.textContent = "not tasted"
     }
     
     /* adding classes for css styling */
+    tastedtext.classList.add("tasted-text")
     title.classList.add("card-title")
     origin.classList.add("card-origin")
     pages.classList.add("card-pages")
@@ -60,13 +71,26 @@ function renderBook(book) {
     origin.textContent = `origin country: ${book.origin}`
     pages.textContent = `${book.pages} stalks`
     /* appending elements */
+    tasted.appendChild(tastedtext)
     card.appendChild(title)
     card.appendChild(origin)
     card.appendChild(pages)
     card.appendChild(tasted)
     card.classList.add("card")
     container.appendChild(card)
-    
+    /* event listener for button */
+     tasted.addEventListener("click", (event) => {
+        if (tasted.classList.contains("checked")) {
+            tasted.classList.add("not-checked")
+            tasted.classList.remove("checked")
+            animateText(tastedtext, "not tasted")
+        }
+        else {
+            tasted.classList.add("checked")
+            tasted.classList.remove("not-checked")
+            animateText(tastedtext, "tasted")
+        }
+    })
     
 }
 function resetForm() {
@@ -89,6 +113,57 @@ function addBookToLibrary(title, origin, pages, read) {
 }
 
 
+
+const button = document.querySelector(".new-btn")
+
+
+
+
+  button.addEventListener("mouseover", (event) => {
+        button.classList.add("hover")
+        button.classList.remove("non")
+  })
+
+
+
+  button.addEventListener("mouseleave", (event) => {
+        button.classList.add("non")
+        button.classList.remove("hover")
+  })
+
+
+const popover = document.getElementById("form");
+const overlay = document.getElementById("overlay")
+
+
+let check = 0
+
+button.addEventListener('click', () => {
+    if (check == 0) {
+  popover.classList.add('show');
+  popover.classList.remove('hide');
+  overlay.classList.add('show');
+  overlay.classList.remove('hide');
+  check = 1;
+} else {
+  popover.classList.remove('show');
+  popover.classList.add('hide');
+  overlay.classList.remove('show');
+  overlay.classList.add('hide');
+  check = 0;
+}
+  
+});
+
+document.addEventListener('click', (e) => {
+  if (!popover.contains(e.target) && !button.contains(e.target)) {
+    popover.classList.remove('show');
+    popover.classList.add('hide');
+    overlay.classList.remove('show');
+    overlay.classList.add('hide');
+    check = 0;
+  }
+});
 
 
 
