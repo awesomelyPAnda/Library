@@ -32,7 +32,7 @@ body{
 
 .top {
     width: 100vw;
-    height: 10vh;
+    min-height: 10vh;
     background-color: var(--topbg);
     display: flex;
     gap: 1.3vw;
@@ -46,12 +46,12 @@ body{
 
 
 img.panda{
-    width: 4.5vw;
+    width: clamp(60px, 4.5vw, 110px);
     aspect-ratio: 1/1;
 }
 
 .add-btn{
-    width: 4.3vw;
+    width: clamp(60px, 4.5vw, 140px);
     aspect-ratio: 1/1;
 }
 .bottom{
