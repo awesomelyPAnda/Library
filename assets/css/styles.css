@@ -148,8 +148,8 @@ img{
 }
 
 .card{
-    width: 350px;
-    height: 300px;
+    width: 13vw;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     box-shadow: 1px 1px 10px black;
