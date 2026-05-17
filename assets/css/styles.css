@@ -45,9 +45,14 @@ body{
 
 
 
-img{
+img.panda{
     width: 4.5vw;
-    aspect-ratio: 1.5/1;
+    aspect-ratio: 1/1;
+}
+
+.add-btn{
+    width: 4.3vw;
+    aspect-ratio: 1/1;
 }
 .bottom{
     height: 90vh;
