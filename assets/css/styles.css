@@ -13,7 +13,7 @@
     --boxbg: #adb5bd;
     --buttonbg: #d3d4d5;
     --cardbg: #dddedf;
-    --cardtext: #34393e;
+    --cardtext: #000000;
 }
 
 body{
@@ -51,8 +51,8 @@ img.panda{
 }
 
 .add-btn{
-    width: clamp(60px, 4.5vw, 140px);
-    height: auto;
+    height: clamp(60px, 10vh, 140px);
+    width: auto;
 }
 .bottom{
     height: 90vh;
@@ -67,7 +67,7 @@ img.panda{
     width: 8vw;
     aspect-ratio: 1 / 1;
     border-radius: 10px;
-    margin-top: 4.8vh;
+    margin-top: 7vh;
     margin-left: 3vw;
     display: flex;
     align-items: center;
@@ -191,8 +191,9 @@ img.panda{
     justify-content: center;
     display: flex;
     align-items: center;
-    font-size:clamp(0.75rem, 1.6vw, 1.5rem);
+    font-size:clamp(0.75rem, 0.95vw, 1.5rem);
     border-radius: 10px;
+    margin-bottom: 1.2rem;
 }
 
 .btn.checked{
@@ -200,9 +201,29 @@ img.panda{
     background-color: #6FA804;
 }
 
+.btn.checked.hov{
+    transition: all 0.2s ease-in-out;
+    background-color: #5c8b04;
+}
+
 .btn.not-checked{
     transition: all 0.2s ease-in-out;
     background-color: #E90000;
+}
+
+.btn.not-checked.hov{
+    transition: all 0.2s ease-in-out;
+    background-color: #b80000;
+}
+
+.btn.delete-btn.hov{
+    transition: all 0.2s ease-in-out;
+    background-color: #b5b5b5;
+}
+
+.btn.delete-btn{
+    transition: all 0.2s ease-in-out;
+    background-color: var(--cardbg);
 }
 
 

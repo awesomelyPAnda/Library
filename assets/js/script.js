@@ -52,6 +52,7 @@ function renderBook(book) {
     const pages = document.createElement("p")
     const tasted = document.createElement("button")
     const tastedtext = document.createElement("span")
+    const deletebtn = document.createElement("button")
 
     /*checking value of checkmark */
     if(book.read === true){
@@ -62,25 +63,33 @@ function renderBook(book) {
         tasted.classList.add("not-checked", "btn", "tasted")
         tastedtext.textContent = "not tasted"
     }
+    deletebtn.addEventListener("click", () => {
+        const index = myLibrary.findIndex(b => b.uuid === book.uuid);
+        myLibrary.splice(index, 1);
+        card.remove();
+    });
     
     /* adding classes for css styling */
     tastedtext.classList.add("tasted-text")
     title.classList.add("card-title")
     origin.classList.add("card-origin")
     pages.classList.add("card-pages")
+    deletebtn.classList.add("btn", "delete-btn")
     /* Changing text content */
     title.textContent = book.title
     origin.textContent = `origin country: ${book.origin}`
     pages.textContent = `${book.pages} stalks`
+    deletebtn.textContent = "remove bamboo"
     /* appending elements */
     tasted.appendChild(tastedtext)
     card.appendChild(title)
     card.appendChild(origin)
     card.appendChild(pages)
     card.appendChild(tasted)
+    card.appendChild(deletebtn)
     card.classList.add("card")
     container.appendChild(card)
-    /* event listener for button */
+    /* event listener for buttons */
      tasted.addEventListener("click", (event) => {
         if (tasted.classList.contains("checked")) {
             tasted.classList.add("not-checked")
@@ -93,6 +102,19 @@ function renderBook(book) {
             animateText(tastedtext, "tasted")
         }
     })
+    tasted.addEventListener("mouseover", (event) => {
+        tasted.classList.add("hov")
+    })
+    tasted.addEventListener("mouseleave", (event) => {
+        tasted.classList.remove("hov")
+    })
+    deletebtn.addEventListener("mouseleave", (event) => {
+        deletebtn.classList.remove("hov")
+    })
+    deletebtn.addEventListener("mouseover", (event) => {
+        deletebtn.classList.add("hov")
+    })
+    
     
 }
 
