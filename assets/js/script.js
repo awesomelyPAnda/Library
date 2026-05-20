@@ -53,6 +53,7 @@ function renderBook(book) {
     const tasted = document.createElement("button")
     const tastedtext = document.createElement("span")
     const deletebtn = document.createElement("button")
+    const newbtn = document.querySelector(".new-btn")
 
     /*checking value of checkmark */
     if(book.read === true){
@@ -88,7 +89,7 @@ function renderBook(book) {
     card.appendChild(tasted)
     card.appendChild(deletebtn)
     card.classList.add("card")
-    container.appendChild(card)
+    newbtn.before(card)
     /* event listener for buttons */
      tasted.addEventListener("click", (event) => {
         if (tasted.classList.contains("checked")) {
@@ -223,4 +224,8 @@ submit.addEventListener('click', (e) => {
 
 addBookToLibrary("hello", "test", "56", false)
 addBookToLibrary("reallylongstringoftext", "kindashort?", 1000, true)
+addBookToLibrary("hellf", "test", "56", false)
+addBookToLibrary("reallylongstringoftefxt", "kindashort?", 1000, true)
+addBookToLibrary("hellasdo", "test", "56", false)
+addBookToLibrary("reaasdfllylongstringoftext", "kindashort?", 1000, true)
 
