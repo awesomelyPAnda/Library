@@ -180,7 +180,7 @@ img.panda{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(auto-fill, 120px);
-    grid-row-gap: 6.5rem;
+    grid-row-gap: clamp(6.5rem, 20vh, 18rem);
     grid-column-gap: 3.5rem;
 }
 
