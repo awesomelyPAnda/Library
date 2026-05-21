@@ -16,16 +16,15 @@
     </div>
     <div class="bottom">
         <div class="book-container">
-
+            <button class="new-btn"><img src="assets/favicons/library_add_150dp_495057_FILL0_wght400_GRAD0_opsz48.svg" class="add-btn"></button>
         </div>
-        <button class="new-btn"><img src="assets/favicons/library_add_150dp_495057_FILL0_wght400_GRAD0_opsz48.svg" class="add-btn"></button>
         <div id="overlay" class="overlay hide"></div>
         <div id="form" class="popover hide">
-            <form>
-                <h2>New Bamboo</h2>
-                <input type="text" id="title" placeholder="Name" class="text" required>
-                <input type="text" id="origin" placeholder="Origin" class="text" required>
-                <input type="number" min="2" max="10000" id="pages" placeholder="Number of Stalks" class=text required>
+            <form class="form">
+                <h2 class="minititle">New Bamboo</h2>
+                <input type="text" id="title" placeholder="name" class="text" required>
+                <input type="text" id="origin" placeholder="origin country" class="text" required>
+                <input type="number" min="2" max="10000" id="pages" placeholder="number of stalks" class=text required>
                 <label for="read">Have you tasted the bamboo yet?</label>
                 <input type="checkbox" id="read">
                 <button type="button" id="submit">Add</button>
